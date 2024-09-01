@@ -1,0 +1,2 @@
+ERROR:root:Не удалось получить токен для доступа к API Avito.
+ERROR:root:Некорректный ответ от API Avito: {}

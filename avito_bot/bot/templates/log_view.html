@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Логи Avito Bot</title>
+</head>
+<body>
+    <h1>Логи Avito Bot</h1>
+    <ul>
+        {% for log in logs %}
+            <li>{{ log.keyword.word }}: {{ log.response }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
