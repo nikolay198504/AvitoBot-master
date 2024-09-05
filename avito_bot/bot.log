@@ -1,2 +1,3 @@
 ERROR:root:Не удалось получить токен для доступа к API Avito.
 ERROR:root:Некорректный ответ от API Avito: {}
+INFO:django.utils.autoreload:C:\Users\kolup\AvitoBot-master\avito_bot\avito_bot\settings.py changed, reloading.
