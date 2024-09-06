@@ -16,6 +16,15 @@
             margin-bottom: 20px;
         }
     </style>
+    <script>
+        function toggleSelectAll() {
+            const checkboxes = document.querySelectorAll('input[name="word"]');
+            const selectAll = document.querySelector('input[name="select_all"]').checked;
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = selectAll;
+            });
+        }
+    </script>
 </head>
 <body>
     <h1>Avito Bot</h1>
@@ -29,8 +38,15 @@
 
     <form method="post">
         {% csrf_token %}
+
+        <h3>Выберите ключевые слова:</h3>
         {{ keyword_form.as_p }}
-        {{ message_form.as_p }}
+
+        <h3>Введите сообщение:</h3>
+        <label for="content">Сообщение:</label>
+        <textarea id="content" name="content" rows="4" cols="50">{{ message_form.content.value }}</textarea>
+
+        <br><br>
         <button type="submit">Запустить</button>
     </form>
 </body>

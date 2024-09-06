@@ -1,0 +1,26 @@
+
+python manage.py shell
+
+
+from django.core.mail import EmailMessage
+
+email = EmailMessage(
+    'Test email to admins',
+    'This is a test email sent to admins to verify logging setup.',
+    'kolupaev_nikolay85@mail.ru',  # Отправитель
+    ['kolupaev_nikolay85@mail.ru', 'bogatyirskiy@yandex.ru']  # Адресаты
+)
+email.send(fail_silently=False)
+
+Создайте искусственную ошибку и проверьте отправку логов
+Чтобы проверить, что ошибки логируются и отправляются на почту администраторам, выполните следующий код:
+
+
+
+import logging
+
+# Искусственно создаем ошибку ZeroDivisionError
+try:
+    1 / 0
+except ZeroDivisionError as e:
+    logging.getLogger('django').error('Test error: Division by zero', exc_info=e)

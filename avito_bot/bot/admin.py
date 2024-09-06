@@ -15,7 +15,6 @@ class MessageAdmin(admin.ModelAdmin):
 class LogEntryAdmin(admin.ModelAdmin):
     list_display = ('keyword', 'message', 'response', 'created_at')
     search_fields = ('keyword__word', 'message__content', 'response')
-    list_filter = ('created_at',)
 
 @admin.register(AvitoAd)
 class AvitoAdAdmin(admin.ModelAdmin):

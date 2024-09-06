@@ -7,12 +7,15 @@ class Keyword(models.Model):
     def __str__(self):
         return self.word
 
+
 class Message(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.content
+
+
 
 class AvitoAd(models.Model):
     keyword = models.ForeignKey(Keyword, on_delete=models.CASCADE, related_name='ads')
@@ -33,3 +36,4 @@ class LogEntry(models.Model):
 
     def __str__(self):
         return f"LogEntry for {self.keyword.word} on {self.created_at}"
+

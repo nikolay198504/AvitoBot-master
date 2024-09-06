@@ -1,16 +1,17 @@
-ERROR:root:Не удалось получить токен для доступа к API Avito.
-ERROR:root:Некорректный ответ от API Avito: {}
-INFO:django.utils.autoreload:C:\Users\kolup\AvitoBot-master\avito_bot\avito_bot\settings.py changed, reloading.
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-ERROR:django.request:Internal Server Error: /
+
+ERROR 2024-09-03 12:50:54,682 <console> Test error: Division by zero
+Traceback (most recent call last):
+  File "<console>", line 2, in <module>
+ZeroDivisionError: division by zero
+ERROR 2024-09-03 12:51:03,605 <console> Test error: Division by zero
+Traceback (most recent call last):
+  File "<console>", line 2, in <module>
+ZeroDivisionError: division by zero
+ERROR 2024-09-03 12:51:57,272 <console> Test error: Division by zero
+Traceback (most recent call last):
+  File "<console>", line 2, in <module>
+ZeroDivisionError: division by zero
+ERROR 2024-09-06 16:59:00,693 log Internal Server Error: /
 Traceback (most recent call last):
   File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -22,5 +23,4 @@ Traceback (most recent call last):
     if keyword_form.is_valid() and message_form.is_valid():
                                    ^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Message' object has no attribute 'is_valid'
-ERROR:django.server:"POST / HTTP/1.1" 500 73139
-INFO:root:Новый токен получен: None
+ERROR 2024-09-06 16:59:01,438 basehttp "POST / HTTP/1.1" 500 73139
