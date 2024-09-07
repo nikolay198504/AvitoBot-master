@@ -24,3 +24,4 @@ Traceback (most recent call last):
 AttributeError: 'Message' object has no attribute 'is_valid'
 ERROR:django.server:"POST / HTTP/1.1" 500 73139
 INFO:root:Новый токен получен: None
+INFO:root:Новый токен получен: None
