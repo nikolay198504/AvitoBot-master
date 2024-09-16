@@ -1,0 +1,50 @@
+<!-- templates/results.html -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты поиска</title>
+</head>
+<body>
+    <h1>Результаты поиска по ключевым словам: {{ keywords }}</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    {% if ads %}
+        <ul>
+            {% for ad in ads %}
+                <li>
+                    {% if ad.url %}
+                        <a href="{{ ad.url }}" target="_blank">{{ ad.title }}</a> - {{ ad.price }}<br>
+                    {% else %}
+                        {{ ad.title }} - {{ ad.price }}<br>
+                    {% endif %}
+                    Продавец: {{ ad.seller_id }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Объявления не найдены.</p>
+    {% endif %}
+
+    {% if unprocessed_ads %}
+        <h2>Необработанные объявления:</h2>
+        <ul>
+            {% for ad in unprocessed_ads %}
+                <li>
+                    {% if ad.url %}
+                        <a href="{{ ad.url }}" target="_blank">{{ ad.title }}</a> - {{ ad.price }}<br>
+                        Продавец: {{ ad.seller }}
+                    {% else %}
+                        {{ ad.title }} - {{ ad.price }}<br>
+                        Продавец: Неизвестен
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{% url 'index' %}">Вернуться на главную</a>
+</body>
+</html>

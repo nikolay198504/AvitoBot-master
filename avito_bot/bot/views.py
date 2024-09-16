@@ -1,50 +1,101 @@
-from django.shortcuts import render, redirect
-from .models import Keyword, Message, LogEntry, AvitoAd
-from .forms import KeywordForm, Message
-from .utils import search_avito, get_chatgpt_response
+from django.shortcuts import render
+from .forms import MessageForm
+from .utils import (
+    search_avito,
+    scrape_avito_listings,
+    # send_message_to_client,  # Закомментируем, чтобы не отправлять сообщения
+    get_chatgpt_response,
+    ensure_valid_token
+)
 import logging
 
-# Настройка логирования
-logging.basicConfig(filename='bot.log', level=logging.INFO)
+# Настройка логирования (если не настроена в utils.py)
+logging.basicConfig(
+    filename='bot.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+
+# Ключевые слова для отображения в интерфейсе
+KEYWORD_CHOICES = [
+    ("Аренда офиса", "Аренда офиса"),
+    ("Продажа офиса", "Продажа офиса"),
+    ("Офис", "Офис"),
+    ("Коммерческая недвижимость", "Коммерческая недвижимость"),
+    ("Сдача офиса", "Сдача офиса"),
+    ("Продажа коммерческой недвижимости", "Продажа коммерческой недвижимости"),
+    ("Офисные помещения", "Офисные помещения"),
+    ("Коммерческие помещения", "Коммерческие помещения"),
+]
 
 def index(request):
-    if request.method == 'POST':
-        keyword_form = KeywordForm(request.POST)
-        message_form = Message(request.POST)
+    logging.info(f"Запрос получен, метод: {request.method}")
 
-        if keyword_form.is_valid() and message_form.is_valid():
-            selected_keywords = keyword_form.cleaned_data['word']
-            message = message_form.save()
+    if request.method == 'GET':
+        ensure_valid_token(request)
+        message_form = MessageForm()
+        return render(request, 'index.html', {
+            'message_form': message_form,
+            'keywords': KEYWORD_CHOICES
+        })
 
-            for keyword in selected_keywords:
-                ads = search_avito(keyword)
-                if ads and 'result' in ads and 'ads' in ads['result']:
-                    for ad in ads['result']['ads']:
-                        AvitoAd.objects.create(
-                            keyword=keyword,  # Используем связанный объект Keyword
-                            title=ad.get('title', 'Нет заголовка'),
-                            description=ad.get('description', ''),
-                            url=ad.get('url', ''),
-                            price=ad.get('price', 0)
-                        )
-                        response = get_chatgpt_response(ad['description'])
-                        # Логирование результата работы
-                        LogEntry.objects.create(
-                            keyword=keyword,
-                            message=message,
-                            response=response
-                        )
-                else:
-                    # Логирование ошибки, если результат не соответствует ожиданиям
-                    logging.error(f"Некорректный ответ от API Avito: {ads}")
+    elif request.method == 'POST':
+        message_form = MessageForm(request.POST)
+        selected_keywords = request.POST.getlist('keywords')
+        parse_method = request.POST.get('parse_method')
 
-            return redirect('log_view')
-    else:
-        keyword_form = KeywordForm()
-        message_form = Message()
+        if not selected_keywords:
+            logging.error("Ключевые слова не выбраны")
+            return render(request, 'index.html', {
+                'error': 'Вы должны выбрать хотя бы одно ключевое слово!',
+                'message_form': message_form,
+                'keywords': KEYWORD_CHOICES
+            })
 
-    return render(request, 'index.html', {'keyword_form': keyword_form, 'message_form': message_form})
+        logging.info(f"Выбраны ключевые слова: {selected_keywords}")
+
+        if message_form.is_valid():
+            message = message_form.cleaned_data['content']
+        else:
+            message = None
+
+        ads = []
+
+        if parse_method == 'api':
+            ads_data = search_avito(request, selected_keywords, max_ads=10)
+            if ads_data:
+                ads = ads_data.get('resources', [])
+        elif parse_method == 'scrape':
+            ads = scrape_avito_listings(selected_keywords, max_ads=10)
+
+        if ads:
+            detailed_ads = []
+            for ad in ads:
+                detailed_ads.append(ad)
+
+            return render(request, 'results.html', {
+                'ads': detailed_ads,
+                'keywords': selected_keywords
+            })
+        else:
+            logging.error(f"По ключевым словам {selected_keywords} ничего не найдено")
+            return render(request, 'results.html', {
+                'ads': [],
+                'keywords': selected_keywords,
+                'error': 'По вашему запросу ничего не найдено.'
+            })
+
 
 def log_view(request):
-    logs = LogEntry.objects.all()
+    """
+    Представление для просмотра логов приложения.
+    """
+    logs = []
+    try:
+        with open('bot.log', 'r', encoding='utf-8') as f:
+            logs = f.readlines()
+    except FileNotFoundError:
+        logging.error("Лог-файл не найден.")
+
     return render(request, 'log_view.html', {'logs': logs})

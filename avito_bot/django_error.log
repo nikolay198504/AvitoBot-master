@@ -1,17 +1,5 @@
 
-ERROR 2024-09-03 12:50:54,682 <console> Test error: Division by zero
-Traceback (most recent call last):
-  File "<console>", line 2, in <module>
-ZeroDivisionError: division by zero
-ERROR 2024-09-03 12:51:03,605 <console> Test error: Division by zero
-Traceback (most recent call last):
-  File "<console>", line 2, in <module>
-ZeroDivisionError: division by zero
-ERROR 2024-09-03 12:51:57,272 <console> Test error: Division by zero
-Traceback (most recent call last):
-  File "<console>", line 2, in <module>
-ZeroDivisionError: division by zero
-ERROR 2024-09-06 16:59:00,693 log Internal Server Error: /
+ERROR 2024-09-14 22:12:59,296 log Internal Server Error: /
 Traceback (most recent call last):
   File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -19,8 +7,18 @@ Traceback (most recent call last):
   File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kolup\AvitoBot-master\avito_bot\bot\views.py", line 15, in index
-    if keyword_form.is_valid() and message_form.is_valid():
-                                   ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Message' object has no attribute 'is_valid'
-ERROR 2024-09-06 16:59:01,438 basehttp "POST / HTTP/1.1" 500 73139
+  File "C:\Users\kolup\AvitoBot-master\avito_bot\bot\views.py", line 42, in index
+    ensure_valid_token(request)
+    ^^^^^^^^^^^^^^^^^^
+NameError: name 'ensure_valid_token' is not defined
+ERROR 2024-09-16 15:35:47,827 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kolup\AvitoBot-master\avito_bot\bot\views.py", line 75, in index
+    for ad in ads:
+TypeError: 'coroutine' object is not iterable

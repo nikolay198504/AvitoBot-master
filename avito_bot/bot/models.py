@@ -16,7 +16,6 @@ class Message(models.Model):
         return self.content
 
 
-
 class AvitoAd(models.Model):
     keyword = models.ForeignKey(Keyword, on_delete=models.CASCADE, related_name='ads')
     title = models.CharField(max_length=255)
@@ -28,6 +27,7 @@ class AvitoAd(models.Model):
     def __str__(self):
         return self.title
 
+
 class LogEntry(models.Model):
     keyword = models.ForeignKey(Keyword, on_delete=models.CASCADE)
     message = models.ForeignKey(Message, on_delete=models.CASCADE)
@@ -36,4 +36,3 @@ class LogEntry(models.Model):
 
     def __str__(self):
         return f"LogEntry for {self.keyword.word} on {self.created_at}"
-

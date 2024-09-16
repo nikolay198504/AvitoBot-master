@@ -24,3 +24,19 @@ try:
     1 / 0
 except ZeroDivisionError as e:
     logging.getLogger('django').error('Test error: Division by zero', exc_info=e)
+
+
+openai.api_key = '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'
+
+# Avito API Credentials
+CLIENT_ID = '0VywxFUEA55SKrJ4hEHl'
+CLIENT_SECRET = 'HMZdRDlyTD8YlreET79j4Vkq_B-Gye5iSswcPsb_'
+
+
+openai.api_key = os.getenv('OPENAI_API_KEY')  # Рекомендуется использовать переменные окружения
+
+# Avito API Credentials (замените на свои реальные данные или используйте переменные окружения)
+CLIENT_ID = os.getenv('AVITO_CLIENT_ID')
+CLIENT_SECRET = os.getenv('AVITO_CLIENT_SECRET')
+REDIRECT_URI = os.getenv('AVITO_REDIRECT_URI')  # Должен совпадать с указанным при регистрации приложения
+SCOPES = 'items:info messenger:read messenger:write'  # Необходимые скоупы

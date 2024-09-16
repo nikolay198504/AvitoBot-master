@@ -1,16 +1,20 @@
+<!-- templates/log_view.html -->
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Логи Avito Bot</title>
+    <title>Логи приложения</title>
 </head>
 <body>
-    <h1>Логи Avito Bot</h1>
-    <ul>
-        {% for log in logs %}
-            <li>{{ log.keyword.word }}: {{ log.response }}</li>
-        {% endfor %}
-    </ul>
+    <h1>Логи приложения</h1>
+    {% if logs %}
+        <pre>
+{{ logs|join:"" }}
+        </pre>
+    {% else %}
+        <p>Логи отсутствуют.</p>
+    {% endif %}
+    <a href="{% url 'index' %}">Вернуться на главную</a>
 </body>
 </html>
-

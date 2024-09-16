@@ -1,27 +1,11 @@
-ERROR:root:Не удалось получить токен для доступа к API Avito.
-ERROR:root:Некорректный ответ от API Avito: {}
-INFO:django.utils.autoreload:C:\Users\kolup\AvitoBot-master\avito_bot\avito_bot\settings.py changed, reloading.
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
-ERROR:django.request:Internal Server Error: /
-Traceback (most recent call last):
-  File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kolup\business_project\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kolup\AvitoBot-master\avito_bot\bot\views.py", line 15, in index
-    if keyword_form.is_valid() and message_form.is_valid():
-                                   ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Message' object has no attribute 'is_valid'
-ERROR:django.server:"POST / HTTP/1.1" 500 73139
-INFO:root:Новый токен получен: None
-INFO:root:Новый токен получен: None
+
+2024-09-16 15:57:31 - INFO - Р—Р°РїСЂРѕСЃ РїРѕР»СѓС‡РµРЅ, РјРµС‚РѕРґ: GET
+2024-09-16 15:57:31 - INFO - РўРµРєСѓС‰РёР№ access_token РґРµР№СЃС‚РІРёС‚РµР»РµРЅ
+2024-09-16 15:57:35 - INFO - Р—Р°РїСЂРѕСЃ РїРѕР»СѓС‡РµРЅ, РјРµС‚РѕРґ: POST
+2024-09-16 15:57:35 - INFO - Р’С‹Р±СЂР°РЅС‹ РєР»СЋС‡РµРІС‹Рµ СЃР»РѕРІР°: ['РЎРґР°С‡Р° РѕС„РёСЃР°']
+2024-09-16 15:57:35 - INFO - РџР°СЂСЃРёРЅРі СЃС‚СЂР°РЅРёС†С‹ 1: https://www.avito.ru/rossiya/nedvizhimost?q=РЎРґР°С‡Р° РѕС„РёСЃР°&p=1
+2024-09-16 15:57:35 - INFO - Р—Р°РґРµСЂР¶РєР° РјРµР¶РґСѓ Р·Р°РїСЂРѕСЃР°РјРё: 3.44 СЃРµРєСѓРЅРґ
+2024-09-16 15:57:38 - DEBUG - Starting new HTTPS connection (1): www.avito.ru:443
+2024-09-16 15:57:40 - DEBUG - https://www.avito.ru:443 "GET /rossiya/nedvizhimost?q=%D0%A1%D0%B4%D0%B0%D1%87%D0%B0%20%D0%BE%D1%84%D0%B8%D1%81%D0%B0&p=1 HTTP/11" 301 115
+2024-09-16 15:57:43 - DEBUG - https://www.avito.ru:443 "GET /all/nedvizhimost?q=%D0%A1%D0%B4%D0%B0%D1%87%D0%B0+%D0%BE%D1%84%D0%B8%D1%81%D0%B0 HTTP/11" 200 None
+2024-09-16 15:57:43 - INFO - Р”РѕСЃС‚РёРіРЅСѓС‚Рѕ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕР±СЉСЏРІР»РµРЅРёР№
