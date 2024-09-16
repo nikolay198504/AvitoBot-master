@@ -1,15 +1,9 @@
 from django.shortcuts import render
 from .forms import MessageForm
-from .utils import (
-    search_avito,
-    scrape_avito_listings,
-    # send_message_to_client,  # Закомментируем, чтобы не отправлять сообщения
-    get_chatgpt_response,
-    ensure_valid_token
-)
+from .utils import scrape_avito_listings, ensure_valid_token
 import logging
 
-# Настройка логирования (если не настроена в utils.py)
+# Настройка логирования
 logging.basicConfig(
     filename='bot.log',
     level=logging.INFO,
@@ -17,7 +11,6 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
-# Ключевые слова для отображения в интерфейсе
 KEYWORD_CHOICES = [
     ("Аренда офиса", "Аренда офиса"),
     ("Продажа офиса", "Продажа офиса"),
@@ -43,7 +36,6 @@ def index(request):
     elif request.method == 'POST':
         message_form = MessageForm(request.POST)
         selected_keywords = request.POST.getlist('keywords')
-        parse_method = request.POST.get('parse_method')
 
         if not selected_keywords:
             logging.error("Ключевые слова не выбраны")
@@ -55,27 +47,11 @@ def index(request):
 
         logging.info(f"Выбраны ключевые слова: {selected_keywords}")
 
-        if message_form.is_valid():
-            message = message_form.cleaned_data['content']
-        else:
-            message = None
-
-        ads = []
-
-        if parse_method == 'api':
-            ads_data = search_avito(request, selected_keywords, max_ads=10)
-            if ads_data:
-                ads = ads_data.get('resources', [])
-        elif parse_method == 'scrape':
-            ads = scrape_avito_listings(selected_keywords, max_ads=10)
+        ads = scrape_avito_listings(selected_keywords, max_ads=10)
 
         if ads:
-            detailed_ads = []
-            for ad in ads:
-                detailed_ads.append(ad)
-
             return render(request, 'results.html', {
-                'ads': detailed_ads,
+                'ads': ads,
                 'keywords': selected_keywords
             })
         else:
@@ -86,11 +62,8 @@ def index(request):
                 'error': 'По вашему запросу ничего не найдено.'
             })
 
-
 def log_view(request):
-    """
-    Представление для просмотра логов приложения.
-    """
+    """Функция для отображения логов приложения."""
     logs = []
     try:
         with open('bot.log', 'r', encoding='utf-8') as f:
@@ -99,4 +72,3 @@ def log_view(request):
         logging.error("Лог-файл не найден.")
 
     return render(request, 'log_view.html', {'logs': logs})
- 
