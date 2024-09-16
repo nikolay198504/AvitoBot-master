@@ -99,3 +99,4 @@ def log_view(request):
         logging.error("Лог-файл не найден.")
 
     return render(request, 'log_view.html', {'logs': logs})
+ 
