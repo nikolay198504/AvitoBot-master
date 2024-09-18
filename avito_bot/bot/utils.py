@@ -80,7 +80,7 @@ def get_avito_token(request):
             url,
             data=payload,
             headers=headers,
-            timeout=60,
+            timeout=120,
             verify=False
         )
         logging.info(f"Статус-код ответа: {response.status_code}")

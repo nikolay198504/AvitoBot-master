@@ -1,13 +1,35 @@
-2024-09-16 22:00:29 - INFO - Запрос получен, метод: GET
-2024-09-16 22:00:29 - INFO - Текущий access_token действителен
-2024-09-16 22:00:37 - INFO - Запрос получен, метод: POST
-2024-09-16 22:00:37 - INFO - Выбраны ключевые слова: ['Продажа коммерческой недвижимости', 'Коммерческие помещения']
-2024-09-16 22:00:37 - INFO - Парсинг страницы 1: https://www.avito.ru/rossiya/nedvizhimost?q=Продажа коммерческой недвижимости+Коммерческие помещения&p=1
-2024-09-16 22:00:37 - INFO - Задержка между запросами: 3.48 секунд
-2024-09-16 22:00:41 - DEBUG - Starting new HTTPS connection (1): www.avito.ru:443
-2024-09-16 22:00:42 - DEBUG - https://www.avito.ru:443 "GET /rossiya/nedvizhimost?q=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F&p=1 HTTP/11" 429 None
-2024-09-16 22:00:42 - ERROR - Ошибка при парсинге страницы 1: 429 Client Error: Too Many Requests for url: https://www.avito.ru/rossiya/nedvizhimost?q=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F&p=1
-2024-09-16 22:00:42 - INFO - Всего найдено объявлений: 0
-2024-09-16 22:00:42 - ERROR - По ключевым словам ['Продажа коммерческой недвижимости', 'Коммерческие помещения'] ничего не найдено
-2024-09-16 22:00:45 - INFO - Запрос получен, метод: GET
-2024-09-16 22:00:45 - INFO - Текущий access_token действителен
+2024-09-18 08:54:30 - INFO - Запрос получен, метод: GET
+2024-09-18 08:54:30 - INFO - Текущий access_token действителен
+2024-09-18 08:54:35 - INFO - Запрос получен, метод: POST
+2024-09-18 08:54:35 - INFO - Выбраны ключевые слова: ['Коммерческая недвижимость', 'Продажа коммерческой недвижимости', 'Коммерческие помещения']
+2024-09-18 08:54:35 - INFO - Парсинг страницы 1: https://www.avito.ru/rossiya/nedvizhimost?q=Коммерческая недвижимость+Продажа коммерческой недвижимости+Коммерческие помещения&p=1
+2024-09-18 08:54:35 - INFO - Задержка между запросами: 4.03 секунд
+2024-09-18 08:54:39 - DEBUG - Starting new HTTPS connection (1): www.avito.ru:443
+2024-09-18 08:54:40 - DEBUG - https://www.avito.ru:443 "GET /rossiya/nedvizhimost?q=%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C+%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F&p=1 HTTP/11" 301 516
+2024-09-18 08:54:41 - DEBUG - https://www.avito.ru:443 "GET /all/nedvizhimost?q=%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C+%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0+%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F HTTP/11" 200 None
+2024-09-18 08:54:42 - INFO - Достигнуто максимальное количество объявлений
+2024-09-18 08:57:45 - INFO - Запрос получен, метод: GET
+2024-09-18 08:57:45 - INFO - Текущий access_token действителен
+2024-09-18 08:58:18 - INFO - Запрос получен, метод: POST
+2024-09-18 08:58:18 - INFO - Выбраны ключевые слова: ['Продажа офиса', 'Коммерческая недвижимость', 'Продажа коммерческой недвижимости', 'Коммерческие помещения']
+2024-09-18 08:58:18 - INFO - Парсинг страницы 1: https://www.avito.ru/rossiya/nedvizhimost?q=Продажа офиса+Коммерческая недвижимость+Продажа коммерческой недвижимости+Коммерческие помещения&p=1
+2024-09-18 08:58:18 - INFO - Задержка между запросами: 4.16 секунд
+2024-09-18 08:58:23 - DEBUG - Starting new HTTPS connection (1): www.avito.ru:443
+2024-09-18 08:58:24 - DEBUG - https://www.avito.ru:443 "GET /rossiya/nedvizhimost?q=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%20%D0%BE%D1%84%D0%B8%D1%81%D0%B0+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C+%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F&p=1 HTTP/11" 301 590
+2024-09-18 08:58:25 - DEBUG - https://www.avito.ru:443 "GET /all/nedvizhimost?q=%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0+%D0%BE%D1%84%D0%B8%D1%81%D0%B0+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C+%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0+%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9+%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8+%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D1%80%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F HTTP/11" 200 None
+2024-09-18 08:58:26 - INFO - Достигнуто максимальное количество объявлений
+2024-09-18 08:58:55 - INFO - Запрос получен, метод: GET
+2024-09-18 08:58:55 - INFO - Текущий access_token действителен
+2024-09-18 08:59:52 - INFO - Запрос получен, метод: GET
+2024-09-18 08:59:52 - INFO - Текущий access_token действителен
+2024-09-18 09:00:01 - INFO - Запрос получен, метод: GET
+2024-09-18 09:00:01 - INFO - Текущий access_token действителен
+2024-09-18 09:00:08 - INFO - Запрос получен, метод: POST
+2024-09-18 09:00:08 - INFO - Выбраны ключевые слова: ['Аренда офиса']
+2024-09-18 09:00:08 - INFO - Парсинг страницы 1: https://www.avito.ru/rossiya/nedvizhimost?q=Аренда офиса&p=1
+2024-09-18 09:00:08 - INFO - Задержка между запросами: 2.27 секунд
+2024-09-18 09:00:10 - DEBUG - Starting new HTTPS connection (1): www.avito.ru:443
+2024-09-18 09:00:11 - DEBUG - https://www.avito.ru:443 "GET /rossiya/nedvizhimost?q=%D0%90%D1%80%D0%B5%D0%BD%D0%B4%D0%B0%20%D0%BE%D1%84%D0%B8%D1%81%D0%B0&p=1 HTTP/11" 301 676
+2024-09-18 09:00:12 - DEBUG - https://www.avito.ru:443 "GET /all/kommercheskaya_nedvizhimost/sdam-ASgBAgICAUSwCNRW?context=H4sIAAAAAAAA_0SQQZOaMBiG_4vXHvpBtRZ2etgNmzQ00gnWkHCDRBEE3RoE2U7_eydqp8fMvHm_93mK0At_29CDcKZP5_NW9_XpOHuy4QLm4Ywee0073BjSDmU71j_asdadGEuCm1yMNcNjncu9e1-UTN9Kf6Fp86Zpj9agBm4NeQYW8cEQRhPyCqzhl4CsQLG0SghjKEorgz4AW6ZVjyZgMq168gKKcduTCNQyrQ2aA9tUwHbcJugjqIgPt8yqGn8N_JC4G5IPBgGw58p17RM0B_WN29X3JWvvOzW57pUv-jxbgET0s0RxnWfXwXgPDiLei8xcRCcm7f_nLbtgKjNsWYZtLmP310oU2yJbnLXnMv1SonjKJfZymdy6t95YaylafWz_-eBud29QAOwnt-jG4Hw4_vHR2SiZtrkfTNtN--p6EnTVtLsOysdQZMFlvUk1bU7-qnn1kuglcLsNEXOD71shvnn88vAxd54bfOcrMwEFCQ4P9vc8w5Py9zvdiUMh41Z9SjU9ema3pl9nT3_-BgAA__-zxthWGQIAAA&f=ASgBAgICAkSwCNRW1Ai2WQ HTTP/11" 301 669
+2024-09-18 09:00:13 - DEBUG - https://www.avito.ru:443 "GET /all/kommercheskaya_nedvizhimost/sdam/ofis-ASgBAgICAkSwCNRWnsMNhNk5?cd=1&context=H4sIAAAAAAAA_0SQQZOaMBiG_4vXHvpBtRZ2etgNmzQ00gnWkHCDRBEE3RoE2U7_eydqp8fMvHm_93mK0At_29CDcKZP5_NW9_XpOHuy4QLm4Ywee0073BjSDmU71j_asdadGEuCm1yMNcNjncu9e1-UTN9Kf6Fp86Zpj9agBm4NeQYW8cEQRhPyCqzhl4CsQLG0SghjKEorgz4AW6ZVjyZgMq168gKKcduTCNQyrQ2aA9tUwHbcJugjqIgPt8yqGn8N_JC4G5IPBgGw58p17RM0B_WN29X3JWvvOzW57pUv-jxbgET0s0RxnWfXwXgPDiLei8xcRCcm7f_nLbtgKjNsWYZtLmP310oU2yJbnLXnMv1SonjKJfZymdy6t95YaylafWz_-eBud29QAOwnt-jG4Hw4_vHR2SiZtrkfTNtN--p6EnTVtLsOysdQZMFlvUk1bU7-qnn1kuglcLsNEXOD71shvnn88vAxd54bfOcrMwEFCQ4P9vc8w5Py9zvdiUMh41Z9SjU9ema3pl9nT3_-BgAA__-zxthWGQIAAA HTTP/11" 200 None
+2024-09-18 09:00:14 - INFO - Достигнуто максимальное количество объявлений
